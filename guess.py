@@ -2,8 +2,10 @@ import random
 def guess_number():
     print("""1-guess number
 2-guess word
-3-multiplication""")
+3-multiplication
+4-rock,paper,sizer""")
     pick_one = int(input("choose the option: "))
+
     if pick_one == 1:
         while True:
             numbers = random.randint(1, 100)
@@ -42,5 +44,20 @@ def guess_number():
             else:
                 print(f"wrong, answer-{ans}")
 
+    if pick_one == 4:
+        while True:
+            randword = random.choice(['rock', 'paper', 'sizer'])
+            print("""1 rock
+2 paper
+3 sizer""")
+            take = int(input("choose: "))
+            if randword == "rock" and take == 1:
+                print("win")
+            if randword == "paper" and take == 2:
+                print("win")
+            if randword == "sizer" and take == 3:
+                print("win")
+            else:
+                print("wrong")
 
 guess_number()
